@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>A Beginner's Guide to Wrangling Asynchronicity in JavaScript</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -16,8 +16,159 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+				<section data-background="img/sand.jpg" data-background-opacity="0.2">
+					<h1>A Beginner's Guide to Wrangling Asynchronicity in JavaScript</h1>
+				</section>
+
+				<section data-background="img/sand.jpg" data-background-opacity="0.2">
+					<h1>AKA Why can't everything be easier?</h1>
+				</section>
+
+				<section>
+					<h2>read.me</h2>
+					<ul>
+						<li>Raymond Camden</li>
+						<li>Lead Developer Evangelist for HERE</li>
+						<li>Enterprise Cat Demo Builder</li>
+						<li>Second best "Just Dance 2019" player (in my house)</li>
+						<li>Blogging at raymondcamden.com</li>
+						<li>Tweeting @raymondcamden</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Also Me</h2>
+					<p class="fragment">
+					Chronically "OK" at JavaScript for 25 Years
+					</p>
+				</section>
+
+				<section>
+					<h2>My JS Resume</h2>
+					<ul>
+						<li class="fragment">Once wrote JavaScript apps for netscape.com</li>
+						<li class="fragment">Sometimes remember which array methods return new values vs mutate original</li>
+						<li class="fragment">(Ok, I never remember, thank you <a href="https://developer.mozilla.org/en-US/" target="_new">MDN</a>)</li>
+						<li class="fragment">Almost used <code>Array.reduce</code> w/o checking MDN</li>
+						<li class="fragment">Very good at failing technical hiring tests. (Thank you, Google!) <span style="font-size: 6px">You can still hire me. Reach out!</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Today's Discussion</h2>
+					<ul>
+						<li class="fragment">Define the problem</li>
+						<li class="fragment">Describe the solutions</li>
+						<li class="fragment">Iterate</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>
+					<a href="https://github.com/cfjedimaster/async-preso" target="_new">github.com/cfjedimaster/async-preso</a>
+					</p>
+				</section>
+
+				<section>
+					<h1>The Problem</h1>
+				</section>
+
+				<section>
+				<pre><code class="javascript" data-trim>
+let cats = getCats();
+console.log(cats);
+				</code></pre>
+				<p class="fragment">
+				<code>"undefined"</code>
+				</p>
+				</section>
+
+				<section>
+				<p>What we thought was happening...</p>
+				<pre><code class="text">
+Call the function getCats and set the 
+result to a variable named cats
+				</code></pre>
+				</section>
+
+				<section>
+				<p>What happened</p>
+				<pre><code class="text">
+Call the function getCats... which took some time to 
+process while our code didn't wait.
+				</code></pre>
+				</section>
+
+
+				<section>
+				<pre><code class="javascript" data-trim>
+function loadWeather() {
+  $.ajax({
+    url: "/api/getWeather",
+	  data: {
+		zipcode: 97201
+	  },
+	  success: function( result ) {
+		$( "#weather-temp" ).html( "<strong>" + result + 
+		"</strong> degrees" );
+	  }
+  });
+}
+				</code></pre>
+				<aside class="notes">
+				example from jquery, you can miss the async nature of it, 
+				client asks - weather is slow, add a msg
+				</aside>
+				</section>
+
+				<section>
+				<pre><code class="javascript" data-trim>
+$("#weather-temp").html("<i>Loading</i>");
+weather = loadWeather();
+$("#weather-temp").html(weather);
+
+function loadWeather() {
+  $.ajax({
+    url: "/api/getWeather",
+	  data: {
+		zipcode: 97201
+	  },
+	  success: function( result ) {
+	  	return result;
+	  }
+  });
+}
+
+				</code></pre>
+				<aside class="notes">
+				the annoying thing is - if they go into dev tools, they still see the call
+				</aside>
+				</section>
+
+				<section>
+					<h1>Solution the First:</h1>
+					<h2 class="fragment">Callbacks</h2>
+				</section>
+
+				<section>
+				<pre><code class="javascript" data-trim>
+someAPI(arguments of some sort, function to run when done);
+				</code></pre>
+				</section>
+
+				<section>
+				<pre><code class="javascript" data-trim>
+someAPI(90210, "sevenday", function(error, result) {
+	if(error) {
+		console.error(error);
+		return;
+	}
+	alert("I got "+result);
+});
+				</code></pre>
+				</section>
+
 			</div>
 		</div>
 
@@ -33,7 +184,8 @@
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				slideNumber:'c/t'
 			});
 		</script>
 	</body>
