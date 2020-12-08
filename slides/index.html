@@ -169,6 +169,90 @@ someAPI(90210, "sevenday", function(error, result) {
 				</code></pre>
 				</section>
 
+				<section>
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Callback One" src="https://codepen.io/cfjedimaster/embed/jOMMORX?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/jOMMORX'>Callback One</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+				</section>
+
+				<section>
+				<h2>What if?</h2>
+				<ul>
+				<li class="fragment">I want to do two things?</li>
+				<li class="fragment">I want to do one thing after another?</li>
+				<li class="fragment">I just want to do two things and know when they are done?</li>
+				</ul>
+				</section>
+
+
+				<section>
+				<pre><code class="javascript" data-trim>
+getCats("persian", result => {
+	let cats = result;
+	getDogs("stinky", result => {
+		let dogs = result;
+		// now work with cats and dogs!
+	});
+});
+				</code></pre>
+				</section>
+
+				<section>
+<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Callback Two" src="https://codepen.io/cfjedimaster/embed/qBaaBea?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/qBaaBea'>Callback Two</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>				
+				</section>
+
+				<section>
+<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Callback Two Enterprise" src="https://codepen.io/cfjedimaster/embed/abmmzbd?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/abmmzbd'>Callback Two Enterprise</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+				</section>
+
+				<section>
+				<h2>What if?</h2>
+				<ul>
+				<li>I want to do two things?</li>
+				<li>I want to do one thing after another?</li>
+				<li>I just want to do two things and know when they are done?</li>
+				<li class="fragment">I want to do 4 things?</li>
+				</ul>
+				</section>
+
+				<section>
+				<pre><code class="javascript" data-trim>
+getCats("persian", result => {
+	let cats = result;
+	getDogs("stinky", result => {
+		let dogs = result;
+		getMoreCats("tabby", result => {
+			let moreCats = result;
+			getEvenMoreCats("shorthair", result => {
+				let yesMoreCats = result;
+				//now lets work with them all!
+			});
+		});
+	});
+});
+				</code></pre>
+				</section>
+
+				<section data-background="img/flames.jpg" data-background-opacity="0.2">
+					<h1>CALLBACK HELL!!!!</h1>
+				</section>
+
+				<section>
+					<img src="img/quicksand.jpg">
+				</section>
+
+				<section>
+					<h1>Solution the Second:</h1>
+					<h2 class="fragment">Promises</h2>
+				</section>
+
 			</div>
 		</div>
 
