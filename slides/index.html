@@ -152,7 +152,7 @@ function loadWeather() {
 				</section>
 
 				<section>
-				<pre><code class="javascript" data-trim>
+				<pre><code class="none" data-trim>
 someAPI(arguments of some sort, function to run when done);
 				</code></pre>
 				</section>
@@ -196,6 +196,7 @@ getCats("persian", result => {
 	});
 });
 				</code></pre>
+				<aside class="notes">This works, but doesnt run getDogs till getCats is done</aside>
 				</section>
 
 				<section>
@@ -203,6 +204,10 @@ getCats("persian", result => {
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/qBaaBea'>Callback Two</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>				
+				</section>
+
+				<section>
+					<h2>Hey Ray, are you clever?</h2>
 				</section>
 
 				<section>
@@ -253,6 +258,101 @@ getCats("persian", result => {
 					<h2 class="fragment">Promises</h2>
 				</section>
 
+				<section>
+				<h2>What is a Promise?</h2>
+				<ul>
+				<li class="fragment">An object representing your async promise</li>
+				<li class="fragment">Imagine a personal assistant you can nag about the status of something</li>
+				<li class="fragment">Reports three states: pending, fulfilled, rejected</li>
+				<li class="fragment">Can be chained for awesomeness</li>
+				</ul>
+				</section>
+
+				<section>
+				<pre><code class="javascript" data-trim data-line-numbers>
+// getCats defined earlier, returns a promise
+catPromise = getCats('persian');
+				</code></pre>
+				<aside class="notes">
+				Let's start by using an API that returns a promise. I'm going to show you how to create promises later, but assume
+				you're the dev needing to use this API and you were told it returned a promise. How do you use it?
+				</aside>
+				</section>
+
+				<section>
+				<pre><code class="javascript" data-trim data-line-numbers="3-5">
+// getCats defined earlier, returns a promise
+catPromise = getCats('persian');
+catPromise.then(result => {
+	console.log(result);
+});
+				</code></pre>
+				<aside class="notes">
+				A promise object has a then property where you say, "hey when you get your crap, execute this."
+				IMPORTANT NOTE - if getCats finishes before JS even has a chance to see your then, that's fine.
+				Basically it'ss like saying, "hey, when you are done, or if you are done, do X"
+				</aside>
+				</section>
+
+				<section>
+				<pre><code class="javascript" data-trim data-line-numbers="5-7">
+// getCats defined earlier, returns a promise
+catPromise = getCats('persian');
+catPromise.then(result => {
+	console.log(result);
+}).catch(e => {
+	console.error(e);
+});
+				</code></pre>
+				<aside class="notes">
+				finish it up with an error handler
+				</aside>
+				</section>
+
+				<section>
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise One" src="https://codepen.io/cfjedimaster/embed/bGwBEGv?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/bGwBEGv'>Promise One</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+				<aside class="notes">
+				note that yuo hid getCats, click to go to codepen and move promise beneath p2
+				</aside>
+				</section>
+
+				<section>
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise Two" src="https://codepen.io/cfjedimaster/embed/dypOGWv?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/dypOGWv'>Promise Two</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+				<aside class="notes">
+				Two promises that I'm chaining, but note this is CHAINED, one after the other
+				</aside>
+				</section>
+
+				<section>
+				<h2>Promise.all</h2>
+				<ul>
+				<li class="fragment">Let's you pass an array of promises</li>
+				<li class="fragment">Fires when ALL are done SUCCESSFULLY</li>
+				<li class="fragment">You can use catch which will fire for ANY error</li>
+				<li class="fragment">All or nothing (but wait, there's hope...)</li>
+				</ul>
+				</section>
+
+				<section>
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise All" src="https://codepen.io/cfjedimaster/embed/oNzYbPe?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/oNzYbPe'>Promise All</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+				</section>
+
+				<!--
+notes to self - 
+how to make promises
+cool example of wrapping geolocation
+the "other" promise methods, just enumerate
+				-->
 			</div>
 		</div>
 
