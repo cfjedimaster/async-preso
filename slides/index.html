@@ -336,7 +336,7 @@ catPromise.then(result => {
 				<li class="fragment">Let's you pass an array of promises</li>
 				<li class="fragment">Fires when ALL are done SUCCESSFULLY</li>
 				<li class="fragment">You can use catch which will fire for ANY error</li>
-				<li class="fragment">All or nothing (but wait, there's hope...)</li>
+				<li class="fragment">All or nothing (but wait, there's hope...) wrng spelld wrd </li>
 				</ul>
 				</section>
 
@@ -347,12 +347,142 @@ catPromise.then(result => {
 </iframe>
 				</section>
 
-				<!--
-notes to self - 
-how to make promises
-cool example of wrapping geolocation
-the "other" promise methods, just enumerate
-				-->
+				<section data-background="img/baking.jpg" data-background-opacity="0.2">
+					<h2>Roll your own Promises</h2>
+				</section>
+
+				<section>
+				<h2>Making Promises</h2>
+				<pre><code class="javascript" data-trim>
+new Promise((resolve, reject) => {
+	
+});
+				</code></pre>
+				</section>
+
+				<section>
+				<h2>Making Promises</h2>
+				<h3>Non-Hipster Version</h3>
+				<pre><code class="javascript" data-trim>
+new Promise(function(resolve, reject) {
+	
+});
+				</code></pre>
+				</section>
+
+				<section>
+				<h2>Making Promises</h2>
+				<pre><code class="javascript" data-trim>
+new Promise((resolve, reject) => {
+	// do your stuff!
+	if(stuffIsGood) {
+		resolve(the stuff you want to return);
+	} else {
+		reject('what the heck went wrong!');
+	}
+});
+				</code></pre>
+				</section>
+
+				<section>
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise New" src="https://codepen.io/cfjedimaster/embed/PoGbVGX?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/PoGbVGX'>Promise New</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+				<aside class="notes">
+				So this is the code I showed before - only change is that I moved the "hidden" crap up so you can see.
+				While this is still kinda lame fake code, it actually illustrates a REALLY important thing to consider.
+				Most modern code makes use of Promises instead of callbacks, but the neat thing about P is that you can use it to 
+				"fix" things that don't use Promises now. Here's a great example.
+				</aside>
+				</section>
+
+				<section>
+				<h2>Fixing the past...</h2>
+				<pre><code class="javascript" data-trim>
+navigator.geolocation.getCurrentPosition(success => {
+	// do something with the success
+}, error => {
+	// do something with the error, or ignore it, i dont care
+}, options);
+				</code></pre>
+				</section>
+
+				<section>
+				<h2>OMG Awesome Version</h2>
+				<pre><code class="javascript" data-trim>
+new Promise((resolve, reject) => {
+	navigator.geolocation.getCurrentPosition(success => {
+		resolve(success);
+	}, error => {
+		reject(error);
+	}, options);
+});
+				</code></pre>
+				</section>
+
+				<section>
+<iframe height="265" class="r-stretch" style="width: 100%;" scrolling="no" title="Promisified Geolocation" src="https://codepen.io/cfjedimaster/embed/vYXybZz?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/vYXybZz'>Promisified Geolocation</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+				</section>
+
+
+				<section>
+				<h2>Promise Goodies</h2>
+				<ul>
+				<li class="fragment">Promise.allSettled</li>
+				<li class="fragment">Promise.any</li>
+				<li class="fragment">Promise.race</li>
+				<li class="fragment">Promise.finally (instance method)</li>
+				</ul>
+				<aside class="notes">
+				"good support" means Chrome, Edge, FF, iOS
+A lot of this from MDN!
+allSettled: The Promise.allSettled() method returns a promise that resolves after all of the given promises have either fulfilled or rejected, 
+with an array of objects that each describes the outcome of each promise. Good support 
+
+any: Promise.any() takes an iterable of Promise objects and, as soon as one of the promises in the iterable fulfills, returns a single promise that 
+resolves with the value from that promise. If no promises in the iterable fulfill (if all of the given promises are rejected), then the returned promise 
+is rejected with an AggregateError, a new subclass of Error that groups together individual errors. Essentially, this method is the opposite of Promise.all(). Not in Edge!
+
+The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an iterable fulfills or rejects, with the value 
+or reason from that promise. Good support
+
+finally - whether success or failure, do X
+				</aside>
+				</section>
+
+				<section>
+				<h2>Fetch Demo</h2>
+<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v1" src="https://codepen.io/cfjedimaster/embed/ZEpBwNJ?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/ZEpBwNJ'>Fetch v1</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+				</section>
+
+				<section>
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v2" src="https://codepen.io/cfjedimaster/embed/NWRboZN?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/NWRboZN'>Fetch v2</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+				</section>
+
+				<section>
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v3" src="https://codepen.io/cfjedimaster/embed/ExgNrqE?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/ExgNrqE'>Fetch v3</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+				</section>
+
+				<section>
+				<h2>Promise Resources</h2>
+				<ul>
+				<li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_new">Using Promises (MDN)</a></li>
+				<li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_new">Promise API (MDN)</a></li>
+				</ul>
+				</section>
 			</div>
 		</div>
 

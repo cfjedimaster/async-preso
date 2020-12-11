@@ -22,3 +22,5 @@ Image credits:
 sand.jpg, <span>Photo by <a href="https://unsplash.com/@agneska?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">magnezis magnestic</a> on <a href="https://unsplash.com/s/photos/away?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 flames.jpg, <span>Photo by <a href="https://unsplash.com/@andywatkins?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Andy Watkins</a> on <a href="https://unsplash.com/s/photos/flames?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
+baking.jpg, <span>Photo by <a href="https://unsplash.com/@themephotos?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Theme Photos</a> on <a href="https://unsplash.com/s/photos/baking?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
