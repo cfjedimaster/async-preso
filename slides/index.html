@@ -483,6 +483,58 @@ finally - whether success or failure, do X
 				<li class="fragment"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_new">Promise API (MDN)</a></li>
 				</ul>
 				</section>
+
+
+				<section>
+					<h1>Solution the Third<sup>*</sup>:</h1>
+					<h2 class="fragment">Async/Await</h2>
+				</section>
+
+				<section>
+				<h2>Async/Await</h2>
+				<ul>
+				<li class="fragment">Introduced in ES8/ES2017 (this is not confusing at all, honest), June 2017</li>
+				<li class="fragment">Node v8, October 2017</li>
+				<li class="fragment">Very well supported (<a href="https://caniuse.com/?search=async%20await" target="_new">CanIUse</a>)</li>
+				<li class="fragment">Not a "replacement" for Promises</li>
+				<li class="fragment">I'M STILL LEARNING THIS!</li>
+				</ul>
+				</section>
+
+				<section>
+				<h2>Why?</h2>
+				<ul>
+				<li class="fragment">Gets rid of Then hell (which isn't a thing)</li>
+				<li class="fragment">Lets you write async code like it was sync</li>
+				<li class="fragment">Yes, this can be a footgun</li>
+				<li class="fragment">But it's a really, really cool footgun</li>
+				</ul>
+				</section>
+
+				<section>
+				<h2>An example</h2>
+				<pre><code class="javascript" data-trim>
+getUser()
+.then(user => getOrdersForUser(user))
+.then(orders => {
+	// do something with Orders
+})
+				</code></pre>
+				</section>
+
+				<section>
+				<h2>An example</h2>
+				<pre><code class="javascript" data-trim>
+let user = await getUser();
+let orders = await getOrdersForUser(user);
+// do something with Orders
+				</code></pre>
+				</section>
+
+<!--
+for the end, https://exploringjs.com/es6/ch_async.html
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
+-->
 			</div>
 		</div>
 
