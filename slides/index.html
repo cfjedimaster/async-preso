@@ -531,6 +531,99 @@ let orders = await getOrdersForUser(user);
 				</code></pre>
 				</section>
 
+				<section>
+				<h2>Basics</h2>
+				<ul>
+				<li class="fragment"><code>async</code> keyword marks a function as something asyncrhonous</li>
+				<li class="fragment">It also makes a function return a promise, even if it doesn't!</li>
+				<li class="fragment"><code>await</code> keyword waits for an async function to return (or a function returning a Promise)</li>
+				<li class="fragment">It must be inside an async function itself (this part is confusing)</li>
+				</ul>
+				</section>
+
+				<section>
+				<h2>async</h2>
+				<pre><code class="javascript" data-trim>
+function foo() {
+	return 1;
+}
+// returns 1, see, I'd pass your tech screen, honest!
+				</code></pre>
+				</section>
+
+				<section>
+				<h2>async</h2>
+				<pre><code class="javascript" data-trim>
+async function foo() {
+	return 1;
+}
+// returns a resolve Promise, so foo().then(res => console.log(res))
+				</code></pre>
+				</section>
+
+				<section>
+				<h2>async</h2>
+				<pre><code class="javascript" data-trim>
+async function foo() {
+	return new Promise((resolve, reject) => {
+		setTimeOut(() => {
+			resolve(1)
+		}, 2000);
+	});
+}
+				</code></pre>
+				</section>
+
+				<section>
+				<h1>EASY PART DONE!</h1>
+				</section>
+
+				<section>
+				<h2>await</h2>
+				<pre><code class="javascript" data-trim>
+async function foo() {
+	return new Promise((resolve, reject) => {
+		setTimeOut(() => {
+			resolve(1)
+		}, 2000);
+	});
+}
+
+let result = await foo();
+// Uncaught SyntaxError: await is only valid in async function 
+// https://codepen.io/cfjedimaster/pen/OJRpoMR?editors=1010 
+// if you want to see
+				</code></pre>
+				</section>
+
+				<section>
+				<h2>Solution?</h2>
+				<ul>
+				<li class="fragment">Add async to the calling function</li>
+				<li class="fragment">But that may impact the function calling it</li>
+				<li class="fragment">And so on, and so on...</li>
+				</ul>
+				</section>
+
+				<section>
+<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v3" src="https://codepen.io/cfjedimaster/embed/jOMBvqa?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/jOMBvqa'>Fetch v3</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>				
+				</section>
+
+				<section>
+<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v4" src="https://codepen.io/cfjedimaster/embed/YzGZOQy?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/YzGZOQy'>Fetch v4</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+				<aside class="notes">
+				Point out the two awaits
+				Point out one waits for the other
+				Is this a big deal? I'd argue NO! As long as you know it.
+				</aside>
+				</section>
+
 <!--
 for the end, https://exploringjs.com/es6/ch_async.html
 https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
