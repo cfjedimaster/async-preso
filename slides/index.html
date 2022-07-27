@@ -447,7 +447,7 @@ with an array of objects that each describes the outcome of each promise. Good s
 
 any: Promise.any() takes an iterable of Promise objects and, as soon as one of the promises in the iterable fulfills, returns a single promise that 
 resolves with the value from that promise. If no promises in the iterable fulfill (if all of the given promises are rejected), then the returned promise 
-is rejected with an AggregateError, a new subclass of Error that groups together individual errors. Essentially, this method is the opposite of Promise.all(). Not in Edge!
+is rejected with an AggregateError, a new subclass of Error that groups together individual errors. Essentially, this method is the opposite of Promise.all(). 
 
 The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an iterable fulfills or rejects, with the value 
 or reason from that promise. Good support
