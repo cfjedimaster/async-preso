@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>A Beginner's Guide to Wrangling Asynchronicity in JavaScript</title>
+		<title>A Beginner's Guide to Wrangling Asynchronicity in JavaScript (30 Minutes)</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -33,27 +33,6 @@
 						<li>Enterprise Cat Demo Builder</li>
 						<li>Blogging at raymondcamden.com</li>
 						<li>Tweeting @raymondcamden</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Also Me</h2>
-					<p class="fragment">
-					Chronically "OK" at JavaScript for 25 Years
-					</p>
-				</section>
-
-				<section>
-					<h2>My JS Resume</h2>
-					<ul>
-						<li class="fragment">Once wrote JavaScript apps for netscape.com</li>
-						<li class="fragment">Sometimes remember which array methods return new values vs mutate original</li>
-						<li class="fragment">(Ok, I never remember, thank you <a href="https://developer.mozilla.org/en-US/" target="_new">MDN</a>)</li>
-						<li class="fragment">Almost used <code>Array.reduce</code> w/o checking MDN
-							<ul><li class="fragment" style="color:gold">NO WAIT I DID IT ONCE!</span></li>
-							<li class="fragment" style="color:gold">BUT COULDN'T LAST TIME :(</span></li></ul>
-							</li>
-						<li class="fragment">Very good at failing technical hiring tests. (Thank you, Google!)</li>
 					</ul>
 				</section>
 
@@ -172,11 +151,10 @@ someAPI("90210", "sevenday", function(error, result) {
 				</section>
 
 				<section>
-				<iframe class="r-stretch" height="300" style="width: 100%;" scrolling="no" title="Callback One" src="https://codepen.io/cfjedimaster/embed/jOMMORX?default-tab=js%2Cresult&theme-id=42685" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-				See the Pen <a href="https://codepen.io/cfjedimaster/pen/jOMMORX">
-				Callback One</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
-				on <a href="https://codepen.io">CodePen</a>.
-				</iframe>
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Callback One" data-preload data-src="https://codepen.io/cfjedimaster/embed/jOMMORX?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/cfjedimaster/pen/jOMMORX'>Callback One</a> by Raymond Camden
+  (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 				</section>
 
 				<section>
@@ -187,6 +165,7 @@ someAPI("90210", "sevenday", function(error, result) {
 				<li class="fragment">I just want to do two things and know when they are done?</li>
 				</ul>
 				</section>
+
 
 				<section>
 				<pre><code class="javascript" data-trim>
@@ -202,7 +181,7 @@ getCats("persian", result => {
 				</section>
 
 				<section>
-<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Callback Two" data-preload data-src="https://codepen.io/cfjedimaster/embed/qBaaBea?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Callback Two" data-preload data-src="https://codepen.io/cfjedimaster/embed/qBaaBea?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/qBaaBea'>Callback Two</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>				
@@ -213,7 +192,7 @@ getCats("persian", result => {
 				</section>
 
 				<section>
-<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Callback Two Enterprise" data-preload data-src="https://codepen.io/cfjedimaster/embed/abmmzbd?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Callback Two Enterprise" data-preload data-src="https://codepen.io/cfjedimaster/embed/abmmzbd?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/abmmzbd'>Callback Two Enterprise</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -312,18 +291,18 @@ catPromise.then(result => {
 				</section>
 
 				<section>
-				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise One" data-preload data-src="https://codepen.io/cfjedimaster/embed/bGwBEGv?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise One" data-preload data-src="https://codepen.io/cfjedimaster/embed/bGwBEGv?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/bGwBEGv'>Promise One</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 				<aside class="notes">
-				note that you hid getCats, click to go to codepen and move promise beneath p2
+				note that yuo hid getCats, click to go to codepen and move promise beneath p2
 				</aside>
 				</section>
 
 				<section>
-				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise Two" data-preload data-src="https://codepen.io/cfjedimaster/embed/dypOGWv?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise Two" data-preload data-src="https://codepen.io/cfjedimaster/embed/dypOGWv?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/dypOGWv'>Promise Two</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -343,7 +322,7 @@ catPromise.then(result => {
 				</section>
 
 				<section>
-				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise All" data-preload data-src="https://codepen.io/cfjedimaster/embed/oNzYbPe?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise All" data-preload data-src="https://codepen.io/cfjedimaster/embed/oNzYbPe?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/oNzYbPe'>Promise All</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -387,7 +366,7 @@ new Promise((resolve, reject) => {
 				</section>
 
 				<section>
-				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise New" data-preload data-src="https://codepen.io/cfjedimaster/embed/PoGbVGX?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Promise New" data-preload data-src="https://codepen.io/cfjedimaster/embed/PoGbVGX?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/PoGbVGX'>Promise New</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -424,7 +403,7 @@ new Promise((resolve, reject) => {
 				</section>
 
 				<section>
-<iframe height="265" class="r-stretch" style="width: 100%;" scrolling="no" title="Promisified Geolocation" data-preload data-src="https://codepen.io/cfjedimaster/embed/vYXybZz?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="265" class="r-stretch" style="width: 100%;" scrolling="no" title="Promisified Geolocation" data-preload data-src="https://codepen.io/cfjedimaster/embed/vYXybZz?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/vYXybZz'>Promisified Geolocation</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -458,21 +437,21 @@ finally - whether success or failure, do X
 
 				<section>
 				<h2>Fetch Demo</h2>
-<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v1" data-preload data-src="https://codepen.io/cfjedimaster/embed/ZEpBwNJ?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v1" data-preload data-src="https://codepen.io/cfjedimaster/embed/ZEpBwNJ?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/ZEpBwNJ'>Fetch v1</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 				</section>
 
 				<section>
-				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v2" data-preload data-src="https://codepen.io/cfjedimaster/embed/NWRboZN?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v2" data-preload data-src="https://codepen.io/cfjedimaster/embed/NWRboZN?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/NWRboZN'>Fetch v2</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 				</section>
 
 				<section>
-				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v3" data-preload data-src="https://codepen.io/cfjedimaster/embed/ExgNrqE?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v3" data-preload data-src="https://codepen.io/cfjedimaster/embed/ExgNrqE?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/ExgNrqE'>Fetch v3</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -609,14 +588,14 @@ let result = await foo();
 				</section>
 
 				<section>
-<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v3" data-preload data-src="https://codepen.io/cfjedimaster/embed/jOMBvqa?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v3" data-preload data-src="https://codepen.io/cfjedimaster/embed/jOMBvqa?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/jOMBvqa'>Fetch v3</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>				
 				</section>
 
 				<section>
-<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v4" data-preload data-src="https://codepen.io/cfjedimaster/embed/YzGZOQy?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v4" data-preload data-src="https://codepen.io/cfjedimaster/embed/YzGZOQy?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/YzGZOQy'>Fetch v4</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -628,7 +607,7 @@ let result = await foo();
 				</section>
 
 				<section>
-				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v5" data-preload data-src="https://codepen.io/cfjedimaster/embed/YzGZRrB?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Fetch v5" data-preload data-src="https://codepen.io/cfjedimaster/embed/YzGZRrB?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/YzGZRrB'>Fetch v5</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -648,7 +627,7 @@ let result = await foo();
 				</section>
 
 				<section>
-				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Async Loop" data-preload data-src="https://codepen.io/cfjedimaster/embed/yLaMGaK?height=265&theme-id=42685&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+				<iframe class="r-stretch" height="265" style="width: 100%;" scrolling="no" title="Async Loop" data-preload data-src="https://codepen.io/cfjedimaster/embed/yLaMGaK?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/cfjedimaster/pen/yLaMGaK'>Async Loop</a> by Raymond Camden
   (<a href='https://codepen.io/cfjedimaster'>@cfjedimaster</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
